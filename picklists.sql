@@ -1,11 +1,8 @@
 --Script to get ICRM picklist items
 
-select 
-	a.itemid as PicklistID
-,	a.text as PLName
-,	b.text as ListValue
-
-from sysdba.picklist a
-inner join sysdba.picklist b
-on a.itemid = b.picklistid
-order by a.text
+SELECT a.itemid AS PicklistID, 
+       a.text AS PLName, 
+       b.text AS ListValue
+FROM sysdba.picklist a
+     INNER JOIN sysdba.picklist b ON a.itemid = b.picklistid
+ORDER BY a.text;
